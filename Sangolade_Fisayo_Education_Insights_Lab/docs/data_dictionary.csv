@@ -1,0 +1,36 @@
+variable,type,description,expected_use
+institution_id,Identifier,Unique institution code,Key; duplicate check
+institution_name,Text,Institution name (not unique),Not used in analysis
+state_code,Categorical,Two-letter US state code,Geographic context
+state_name,Categorical,Full state name,Redundant with state_code
+county,Categorical,County name (repeats across states),Geographic context; not modelled
+nces_locale,Categorical,"NCES urban-centric locale (city / suburb / town / rural, by size)",Urbanicity; broadband gap
+level,Categorical,"School level (elementary, middle, high, K-12, 2-year, 4-year)",Scope filter; control
+control,Categorical,"Governance (public, charter, private variants)",Control variable
+title_i_status,Categorical,"Title I classification (schoolwide, targeted, not eligible, N/A)",Opportunity / context
+total_enrollment,Numerical,Number of enrolled students,Institutional size
+number_of_teachers,Numerical,Number of teachers,Staffing; consistency check
+student_teacher_ratio,Numerical,Students per teacher,Staffing
+percent_free_reduced_lunch,Numerical,% of students eligible for free or reduced-price lunch,Socioeconomic proxy (key control)
+racial_white_pct,Numerical,% White students,Demographic context
+racial_black_pct,Numerical,% Black students,Demographic context
+racial_hispanic_pct,Numerical,% Hispanic students,Demographic context
+racial_asian_pct,Numerical,% Asian students,Demographic context
+racial_native_pct,Numerical,% Native American students,Demographic context
+racial_two_or_more_pct,Numerical,% students of two or more races,Demographic context
+special_education_pct,Numerical,% students in special education,Student-need control
+english_learner_pct,Numerical,% English learners,Student-need control
+per_pupil_expenditure_usd,Numerical,Spending per pupil (US dollars),Key predictor: funding
+federal_funding_pct,Numerical,% of funding from federal sources,Funding mix
+state_funding_pct,Numerical,% of funding from state sources,Funding mix
+local_funding_pct,Numerical,% of funding from local sources,Funding mix
+math_proficiency_pct,Numerical,% of students proficient in mathematics,TARGET (academic outcome)
+reading_proficiency_pct,Numerical,% of students proficient in reading,Outcome; excluded from predictors
+graduation_rate_pct,Numerical,Graduation rate (%),Outcome; meaningful for high schools only
+chronic_absenteeism_pct,Numerical,% of students chronically absent,Outcome / pathway; excluded from predictors
+avg_sat_score,Numerical,Average SAT score,Postsecondary indicator (structurally missing)
+avg_act_score,Numerical,Average ACT score,Postsecondary indicator (structurally missing)
+ap_ib_participation_pct,Numerical,% participating in AP / IB courses,Postsecondary indicator (structurally missing)
+postsecondary_enrollment_pct,Numerical,% enrolling in postsecondary education,Postsecondary indicator (structurally missing)
+stem_certified_flag,Categorical (binary),Yes / No: STEM certified,STEM readiness; context
+broadband_access_pct,Numerical,% of students with broadband access,Key predictor: technology access
