@@ -1,0 +1,236 @@
+{
+  "selected_model": "Linear regression",
+  "features": {
+    "numeric": [
+      "ppe_k",
+      "percent_free_reduced_lunch",
+      "broadband_access_pct",
+      "student_teacher_ratio",
+      "log_enrollment",
+      "english_learner_pct",
+      "special_education_pct",
+      "federal_funding_pct",
+      "local_funding_pct"
+    ],
+    "categorical": [
+      "level",
+      "control",
+      "nces_locale",
+      "title_i_status"
+    ]
+  },
+  "best_params": {
+    "Random forest": {
+      "n_estimators": 300,
+      "min_samples_leaf": 40,
+      "max_features": 0.8,
+      "max_depth": 6
+    },
+    "Gradient boosting": {
+      "subsample": 0.7,
+      "n_estimators": 300,
+      "min_samples_leaf": 40,
+      "max_depth": 2,
+      "learning_rate": 0.02
+    }
+  },
+  "cv_table": [
+    {
+      "model": "Baseline (mean)",
+      "CV_R2": -0.0013481653096620416,
+      "CV_R2_sd": 0.0007733068124576484,
+      "CV_MAE": 12.916274314000736,
+      "CV_RMSE": 15.94146533905051,
+      "CV_RMSE_sd": 0.2619398983410675
+    },
+    {
+      "model": "Linear regression",
+      "CV_R2": 0.37859762495913285,
+      "CV_R2_sd": 0.011742649541407586,
+      "CV_MAE": 10.117211621469428,
+      "CV_RMSE": 12.558811651351283,
+      "CV_RMSE_sd": 0.3018100824050946
+    },
+    {
+      "model": "Ridge",
+      "CV_R2": 0.37924709555780434,
+      "CV_R2_sd": 0.011380733413048037,
+      "CV_MAE": 10.110024393855335,
+      "CV_RMSE": 12.552026874332771,
+      "CV_RMSE_sd": 0.28956147141774097
+    },
+    {
+      "model": "Random forest",
+      "CV_R2": 0.37451764424351686,
+      "CV_R2_sd": 0.015422182862503315,
+      "CV_MAE": 10.15997902008441,
+      "CV_RMSE": 12.5989441581063,
+      "CV_RMSE_sd": 0.29339200840407165
+    },
+    {
+      "model": "Gradient boosting",
+      "CV_R2": 0.3758797910029766,
+      "CV_R2_sd": 0.01642193790589781,
+      "CV_MAE": 10.152272470190958,
+      "CV_RMSE": 12.585500788488908,
+      "CV_RMSE_sd": 0.3161763601927607
+    }
+  ],
+  "test_table": [
+    {
+      "model": "Baseline (mean)",
+      "MAE": 13.342571977490428,
+      "RMSE": 16.47218219836746,
+      "R2": -0.00014872891431449986
+    },
+    {
+      "model": "Linear regression",
+      "MAE": 11.055021482030396,
+      "RMSE": 13.69893559096638,
+      "R2": 0.3082710371106665
+    },
+    {
+      "model": "Ridge",
+      "MAE": 11.047461119020257,
+      "RMSE": 13.68665731831507,
+      "R2": 0.30951046633968116
+    },
+    {
+      "model": "Random forest",
+      "MAE": 11.146418235207005,
+      "RMSE": 13.79650125729887,
+      "R2": 0.298382775412545
+    },
+    {
+      "model": "Gradient boosting",
+      "MAE": 11.09874326428059,
+      "RMSE": 13.736805708362606,
+      "R2": 0.30444124091722935
+    }
+  ],
+  "headline": {
+    "repeated_cv_r2_mean": 0.3627722298185968,
+    "repeated_cv_r2_sd": 0.028267811588147434,
+    "splits_r2_mean": 0.3593031949581619,
+    "splits_r2_p5": 0.32242496199954185,
+    "splits_r2_p95": 0.402071059943648,
+    "seed_test_r2": 0.3082710371106665
+  },
+  "selected_test": {
+    "MAE": 11.055021482030396,
+    "RMSE": 13.69893559096638,
+    "R2": 0.3082710371106665
+  },
+  "baseline_test": {
+    "MAE": 13.342571977490428,
+    "RMSE": 16.47218219836746,
+    "R2": -0.00014872891431449986
+  },
+  "test_ci": {
+    "r2": [
+      0.25368959099100974,
+      0.35576741386730715
+    ],
+    "rmse": [
+      13.138858166521581,
+      14.258363573653584
+    ]
+  },
+  "within5": 0.2798708288482239,
+  "within10": 0.511302475780409,
+  "within15": 0.7179763186221744,
+  "perm_importance_linear": {
+    "ppe_k": 0.4521684792510744,
+    "percent_free_reduced_lunch": 4.406953000728739,
+    "broadband_access_pct": -7.237848717034367e-05,
+    "student_teacher_ratio": 0.009998036301972402,
+    "log_enrollment": -6.76730867823494e-05,
+    "english_learner_pct": -0.0008796465767503924,
+    "special_education_pct": 0.008831640465658718,
+    "federal_funding_pct": -0.0014482547110840293,
+    "local_funding_pct": -0.011624490643544049,
+    "level": -0.0055969503956673885,
+    "control": 0.011002224055936871,
+    "nces_locale": -0.027138366835204143,
+    "title_i_status": -0.0013250782527266304
+  },
+  "perm_importance_gb": {
+    "ppe_k": 0.3732095830709814,
+    "percent_free_reduced_lunch": 4.130657800034671,
+    "broadband_access_pct": 0.008128476352778958,
+    "student_teacher_ratio": -0.0021552180960784815,
+    "log_enrollment": -0.005319761392404665,
+    "english_learner_pct": 0.006416041849902765,
+    "special_education_pct": 0.0024699354564374333,
+    "federal_funding_pct": -0.013824146533009873,
+    "local_funding_pct": 0.003536695758631847,
+    "level": -0.001089341814784195,
+    "control": -0.00085811498795616,
+    "nces_locale": -0.003754437611246253,
+    "title_i_status": -0.0005556742270872661
+  },
+  "linear_coefficients_top": {
+    "percent_free_reduced_lunch": -8.606659248619069,
+    "ppe_k": 2.5740861253426472,
+    "control_Private Religious": -2.1866355680678224,
+    "nces_locale_Rural - Fringe": 2.1731528820722192,
+    "nces_locale_Rural - Remote": 2.1024995582432586,
+    "nces_locale_Suburban - Large": 1.491166378220648,
+    "nces_locale_Town - Distant": 1.2645223390620117,
+    "nces_locale_City - Midsize": 1.085417378260705,
+    "nces_locale_Suburban - Midsize": 1.0032560532678343,
+    "control_Public": -0.563063351138475
+  },
+  "ablation": [
+    {
+      "feature set": "Poverty only",
+      "CV_R2": 0.35868160926745424,
+      "CV_RMSE": 12.7584329398744,
+      "R2_gain": NaN
+    },
+    {
+      "feature set": "+ Per-pupil spending",
+      "CV_R2": 0.3828510528499141,
+      "CV_RMSE": 12.515512553374538,
+      "R2_gain": 0.02416944358245987
+    },
+    {
+      "feature set": "+ Broadband",
+      "CV_R2": 0.38227414895716727,
+      "CV_RMSE": 12.521334852580477,
+      "R2_gain": -0.0005769038927468384
+    },
+    {
+      "feature set": "+ Staffing & size",
+      "CV_R2": 0.38196092475625987,
+      "CV_RMSE": 12.52453699832337,
+      "R2_gain": -0.00031322420090740266
+    },
+    {
+      "feature set": "+ Student needs (EL, special ed)",
+      "CV_R2": 0.38202842795809344,
+      "CV_RMSE": 12.523864062660094,
+      "R2_gain": 6.750320183357417e-05
+    },
+    {
+      "feature set": "+ Funding mix",
+      "CV_R2": 0.3812948516391192,
+      "CV_RMSE": 12.53127127325374,
+      "R2_gain": -0.0007335763189742495
+    },
+    {
+      "feature set": "+ School context (level, control, locale, Title I)",
+      "CV_R2": 0.3785976249591328,
+      "CV_RMSE": 12.558811651351283,
+      "R2_gain": -0.0026972266799863975
+    },
+    {
+      "feature set": "+ Racial composition (sensitivity only)",
+      "CV_R2": 0.37753644305530887,
+      "CV_RMSE": 12.569542354739802,
+      "R2_gain": -0.0010611819038239267
+    }
+  ],
+  "n_train": 3713,
+  "n_test": 929
+}

@@ -1,0 +1,13 @@
+issue,finding,decision,reason
+Missing SAT / ACT,"Structural: not applicable for elementary, middle, 2-year",Retain as NaN,Imputation would fabricate scores; restrict analysis to levels that report them
+"Missing AP/IB, postsecondary",Structural: not applicable below high school and for colleges,Retain as NaN,Same as above
+Impossible percentages,None found,No action,All percentages within 0-100
+Race and funding shares,All sum to 100,No action; drop one funding share in models,Funding shares are perfectly collinear
+Duplicate institutions,None (IDs unique; repeated names are different schools),No action,Different level/enrollment/outcomes
+Inconsistent categories,None found,Strip whitespace as a safeguard,Keeps pipeline robust to refreshed files
+Graduation rate for elementary/middle,Present but not meaningful,Set to NaN,These schools do not graduate students
+Student-teacher ratio mismatch (70 rows),"Small differences, likely rounding",Keep original; add calculated value and flag,Immaterial; checked in sensitivity analysis
+Local funding = 98% (755 rows),"Fixed 0/2/98 funding mix shared by every Private Non-Profit and Private Religious school: structural, NOT a cap",Retain; add private_fixed_funding_flag,Tied to school control; funding shares act as proxies for public vs private
+"Proficiency ceilings (reading 98, math 96)",Genuine ceilings (censored values),Retain; add reading_capped_flag and math_capped_flag,Not errors; effect checked in notebook 04
+"Outliers (enrollment, spending)",Plausible real institutions,Retain; log-transform enrollment; robust SEs; flag,Deleting would bias the sample
+Colleges / universities,Different population and measures,Exclude from analysis scope (kept in clean file),Avoids confusing institution type with poverty
